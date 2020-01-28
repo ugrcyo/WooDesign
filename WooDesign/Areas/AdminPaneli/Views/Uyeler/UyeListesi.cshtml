@@ -1,0 +1,48 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model WooDesign.Models.Uyeler
+
+
+@{
+    ViewBag.Title = "UyeListesi";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="alert alert-dark" role="alert">
+    <strong> ÜYE LİSTESİ</strong>
+</div>
+
+<p class="container-fluid" style="width:95%">
+    @Html.ActionLink("Yeni Üye Ekle", "UyeEkle", null, new { @class = "btn btn-success" })
+</p>
+<div class="row" id="uyelfiltreler" style="padding-left:20px">
+    @*<div class="container col-md-6">
+            <input class="col-md-4 form-control" type="text" name="name" value="" />
+            <input class="col-md-4 form-control" type="text" name="name" value="" />
+            <input type="submit" class="btn btn-primary" name="name" value="ARA" />
+        </div>*@
+    @using (Ajax.BeginForm("UyeListesi", "Uyeler", FormMethod.Post, new AjaxOptions { OnSuccess = "jsFiltrele" }))
+    {
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.UyeAdi, new { @class = "form-control", @placeholder = "Üye adına göre ara", @id = "adi" })
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.UyeSoyadi, new { @class = "form-control", @placeholder = "Üye soyadına göre ara" })
+        </div>
+        <input type="submit" class="btn btn-primary" name="name" value="Ara"  />
+    }
+
+</div>
+<!--tabletagini alıp partial view sayfasına taşıdım-->
+<div id="dvuyelistesi">
+    @Html.Partial("~/Areas/AdminPaneli/Views/Uyeler/_PartialUyeArama.cshtml", Model)
+</div>
+<script type="text/javascript">
+    function jsFiltrele(gelendeger) {
+        $("#dvuyelistesi").html(gelendeger);
+    }
+</script>
+
+
+

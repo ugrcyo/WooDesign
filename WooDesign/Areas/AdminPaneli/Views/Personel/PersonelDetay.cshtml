@@ -1,0 +1,104 @@
+﻿@model WooDesign.Models.Personeller
+
+@{
+    ViewBag.Title = "PersonelDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Personel Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>PERSONELLER</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyadi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Yetkiler.YetkiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetkiler.YetkiAdi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cinsiyet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cinsiyet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedeniHali)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedeniHali)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumYeri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumYeri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IseGirisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IseGirisTarihi)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "PersonelListesi")
+</div>

@@ -1,0 +1,66 @@
+﻿@model WooDesign.Models.UrunFiyatlari
+
+@{
+    ViewBag.Title = "UrunFiyatlariDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Ürün Fiyat Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>ÜRÜN FİYATLARI</strong></h4>    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAlisFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAlisFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunSatisFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunSatisFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FiyatBaslangicTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FiyatBaslangicTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FiyatBitisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FiyatBitisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urunler.UrunAdi)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "UrunFiyatlariListesi")
+</div>
+

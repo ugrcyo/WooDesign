@@ -1,0 +1,73 @@
+﻿@model WooDesign.Models.indirimler
+
+@{
+    ViewBag.Title = "indirimDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">İndirim Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>İNDİRİMLER</strong></h4>    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.indirimTurAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirimTurAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirimFiyatSekli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirimFiyatSekli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaslamaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaslamaTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BitisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BitisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirimMiktari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirimMiktari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Durumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Durumu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "indirimListesi")
+</div>

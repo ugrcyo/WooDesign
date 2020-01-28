@@ -1,0 +1,35 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model WooDesign.Models.Urunler
+
+@{
+    ViewBag.Title = "UrunListesi";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="alert alert-dark" role="alert">
+    <strong> ÜRÜN LİSTESİ</strong>
+</div>
+
+<div class="row" id="urunfiltreler" style="padding-left:20px">
+
+    @using (Ajax.BeginForm("UrunListesi", "Urun", FormMethod.Post, new AjaxOptions { OnSuccess="jsFiltrele" }))
+    {
+        <div class="col-md-12">
+            @Html.TextBoxFor(model=>model.UrunAdi,new {@class="form-control", @placeholder="Ürün Adına Göre Ara",@id="adi" })
+
+        </div>
+        <input type="submit" name="name" value="Ara" class="btn btn-primary" />
+    }
+</div>
+
+<div id="dvurunlistesi">
+    @Html.Partial("~/Areas/AdminPaneli/Views/Urun/_PartialUrunArama.cshtml", Model)
+</div>
+
+<script type="text/javascript">
+    function jsFiltrele(gelendeger) {
+        $(#dvurunlistesi).html(gelendeger);
+    }
+</script>
+   

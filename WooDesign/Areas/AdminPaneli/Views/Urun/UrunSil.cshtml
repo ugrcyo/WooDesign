@@ -1,0 +1,65 @@
+﻿@model WooDesign.Models.Urunler
+
+@{
+    ViewBag.Title = "UrunSil";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Ürün Silme</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>ÜRÜNLER</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirimFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirimFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EklenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EklenmeTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoriler.KategoriAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        @Html.ActionLink("Listeye Dön", "UrunListesi", null, new { @class = "btn btn-success" })
+    </div>
+    }
+</div>

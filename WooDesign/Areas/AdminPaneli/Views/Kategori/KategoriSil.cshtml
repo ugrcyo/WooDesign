@@ -1,0 +1,49 @@
+﻿@model WooDesign.Models.Kategoriler
+
+@{
+    ViewBag.Title = "KategoriSil";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Kategori Silme</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>KATEGORİLER</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriParentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriParentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAciklama)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        @Html.ActionLink("Listeye Dön", "KategoriListesi", null, new { @class = "btn btn-success" })
+    </div>
+    }
+</div>

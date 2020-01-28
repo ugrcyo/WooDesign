@@ -1,0 +1,41 @@
+﻿@model WooDesign.Models.UyeAdresleri
+
+@{
+    ViewBag.Title = "uyeadresSil";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Üye Adres Silme</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>ÜYE ADRESLERİ</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uyeler.NickName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uyeler.NickName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            @Html.ActionLink("Listeye Dön", "UyeAdresleriListesi", null, new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

@@ -1,0 +1,65 @@
+﻿@model WooDesign.Models.UrunStoklari
+
+@{
+    ViewBag.Title = "UrunStoklariDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Ürün Stokları Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>ÜRÜN STOKLARI</strong></h4>      <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BaslangicTarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaslangicTarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BitisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BitisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StokMiktari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StokMiktari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KalanUrun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KalanUrun)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urunler.UrunAdi)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "UrunStoklariListesi")
+</div>

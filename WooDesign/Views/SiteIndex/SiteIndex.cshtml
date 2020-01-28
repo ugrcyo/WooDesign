@@ -1,0 +1,59 @@
+﻿@model List<WooDesign.Models.Urunler>
+
+
+@{
+
+  ViewBag.Title = "SiteIndex";
+  Layout = "~/Views/Shared/SiteLayout.cshtml";
+
+}
+
+<!-- Product Catagories Area Start -->
+<div class="products-catagories-area clearfix">
+    <div class="amado-pro-catagory clearfix">
+
+        <!-- Single Catagory -->
+        @foreach (var item in Model)
+        {
+
+
+            <div class="single-products-catagory clearfix">
+
+                <a href="/Product/ProductDetails/@item.UrunlerID">
+                    @if (item.Resimler.Where(k => k.UrunId == item.UrunlerID).Count() > 0)
+                    {
+                        <img src="~/Resimler/@item.Resimler.FirstOrDefault(k=>k.UrunId==item.UrunlerID).Resim" class="img img-thumbnail" style="height:250px;width:100%;" alt="">
+                    }
+                    else
+                    {
+                        <img src="~/Resimler/noimage.jpg" alt="Alternate Text" class="img img-thumbnail" style="height:250px;width:100%;" />
+                    }
+                    <!-- Hover Content -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From @item.BirimFiyat.ToString("C")</p>
+                        <h6>@item.UrunAdi</h6>
+                    </div>
+                </a>
+            </div>
+           
+
+            @*<div class="single-products-catagory clearfix">
+                        <a href="shop.html">
+                            <img src="img/bg-img/2.jpg" alt="">
+                             Hover Content
+                            <div class="hover-content">
+                                <div class="line"></div>
+                                <p>From @/*item.BirimFiyat*/</p>
+                                <h4>@/*item.UrunAdi*/</h4>
+                            </div>
+                        </a>
+                    </div>
+                </a>
+            </div>*@
+
+        }
+
+    </div>
+</div>
+<!-- Product Catagories Area End -->

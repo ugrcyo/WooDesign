@@ -1,0 +1,34 @@
+﻿@model WooDesign.Models.UyeAdresleri
+
+@{
+    ViewBag.Title = "UyeAdresDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Üye Adres Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>ÜYE ADRESLERİ</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uyeler.NickName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uyeler.NickName)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "UyeAdresleriListesi")
+</div>

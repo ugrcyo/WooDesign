@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84cc89d47cf041b59fa19e93f52e67d2" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="WooDesignDBModel.indirimler" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="WooDesignDBModel.indirimTurleri" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Kategoriler" Width="1.5" PointX="0.75" PointY="9.5" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Odemeler" Width="1.5" PointX="8.25" PointY="23.25" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Personeller" Width="1.5" PointX="3.75" PointY="27.75" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Reklamlar" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="WooDesignDBModel.SiparisDetaylar" Width="1.5" PointX="8.25" PointY="9.25" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Siparisler" Width="1.5" PointX="6" PointY="22.875" />
+        <EntityTypeShape EntityType="WooDesignDBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.375" />
+        <EntityTypeShape EntityType="WooDesignDBModel.UrunFiyatlari" Width="1.5" PointX="5.25" PointY="17" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Urunler" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="WooDesignDBModel.UrunStoklari" Width="1.5" PointX="5.25" PointY="4.75" />
+        <EntityTypeShape EntityType="WooDesignDBModel.UyeAdresleri" Width="1.5" PointX="6" PointY="27" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Uyeler" Width="1.5" PointX="3.75" PointY="22.25" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Yetkiler" Width="1.5" PointX="1.5" PointY="23.375" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Yorumlar" Width="1.5" PointX="5.25" PointY="11.375" />
+        <AssociationConnector Association="WooDesignDBModel.FK_SiparisDetaylar_indirimler1" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Urunler_Kategoriler" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Odemeler_Siparisler" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Personeller_Yetkiler" />
+        <AssociationConnector Association="WooDesignDBModel.FK_SiparisDetaylar_Siparisler" />
+        <AssociationConnector Association="WooDesignDBModel.FK_SiparisDetaylar_Urunler1" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Siparisler_Uyeler" />
+        <AssociationConnector Association="WooDesignDBModel.FK_UrunFiyatlari_Urunler1" />
+        <AssociationConnector Association="WooDesignDBModel.FK_UrunStoklari_Urunler1" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Yorumlar_Urunler1" />
+        <AssociationConnector Association="WooDesignDBModel.FK_UyeAdresleri_Uyeler" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Uyeler_Yetkiler" />
+        <EntityTypeShape EntityType="WooDesignDBModel.Resimler" Width="1.5" PointX="5.25" PointY="8.5" />
+        <AssociationConnector Association="WooDesignDBModel.FK_Resimler_Urunler" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

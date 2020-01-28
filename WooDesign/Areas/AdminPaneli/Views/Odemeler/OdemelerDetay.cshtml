@@ -1,0 +1,49 @@
+﻿@model WooDesign.Models.Odemeler
+
+@{
+    ViewBag.Title = "OdemelerDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+<h2 class="alert alert-dark" role="alert">Ödeme Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>ÖDEMELER</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ToplamTutari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToplamTutari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KargoTutari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KargoTutari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SiparisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiparisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Siparisler.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Siparisler.Aciklama)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "OdemelerListesi")
+</div>

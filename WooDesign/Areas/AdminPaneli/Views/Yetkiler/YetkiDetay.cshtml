@@ -1,0 +1,28 @@
+﻿@model WooDesign.Models.Yetkiler
+
+@{
+    ViewBag.Title = "YetkiDetay";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="alert alert-dark" role="alert">Yetki Detay</h2>
+
+<div class="container-fluid" style="width:95%">
+    <h4><strong>YETKİLER</strong></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.YetkiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YetkiAdi)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<div class="btn btn-info container-fluid" style="background-color:antiquewhite;width:15%">
+    @Html.ActionLink("Listeye Dön", "YetkilerListesi")
+</div>

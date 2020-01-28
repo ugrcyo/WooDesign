@@ -1,0 +1,40 @@
+﻿@model WooDesign.Models.Personeller
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "PersonelListesi";
+    Layout = "~/Areas/AdminPaneli/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="alert alert-dark" role="alert">
+    <strong> PERSONEL LİSTESİ</strong>
+</div>
+<p class="container-fluid" style="width:95%">
+    @Html.ActionLink("Yeni Personel Ekle", "PersonelEkle", null, new { @class = "btn btn-success" })
+</p>
+<div class="row" id="personelfiltre" style="padding-left:20px">
+
+    @using (Ajax.BeginForm("PersonelListesi", "Personel", FormMethod.Post, new AjaxOptions { OnSuccess = "jsFiltrele" }))
+
+    {
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.Adi, new { @class = "form-control", @placeholder = "Üye Adına Göre Ara", @id = "adi" })
+        </div>
+        <div class="col-md-12">
+            @Html.TextBoxFor(model => model.Soyadi, new { @class = "form-control", @placeholder = "Üye Soyadına Göre Ara", @id = "soyadi" })
+        </div>
+        <input type="submit" class="btn btn-primary" name="name" value="Ara" />
+    }
+</div>
+
+<div id="dvpersonellistesi">
+    @Html.Partial("~/Areas/AdminPaneli/Views/Personel/_PartialPersonelArama.cshtml", Model)
+</div>
+<script type="text/javascript">
+    function jsFiltrele(gelendeger) {
+        $("#dvpersonellistesi").html(gelendeger);
+    }
+</script>
+
+
